@@ -2,31 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Отчет по моделированию электрогенератора</title>
+<title>Моделирование электрогенератора: вращение контура в магнитном поле</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 </head>
 <body>
-<h1>Моделирование электрогенератора: вращение контура в магнитном поле</h1>
 
 <form id="parametersForm">
-    <label for="magneticField">Величина магнитного поля (Тл):</label>
-    <input type="number" id="magneticField" step="0.01" required>
-
+    <h1>Моделирование электрогенератора</h1>
     <label for="rotationFrequency">Частота вращения (кГц):</label>
     <input type="number" id="rotationFrequency" step="0.01" required>
 
     <label for="circuitResistance">Сопротивление контура (Ом):</label>
     <input type="number" id="circuitResistance" step="0.01" required>
 
+    <label for="magneticField">Величина магнитного поля (Тл):</label>
+    <input type="number" id="magneticField" step="0.01" required>
+
     <button type="button" onclick="updateCharts()">Обновить графики</button>
 </form>
 
 <div>
-    <canvas id="emfChart"></canvas>
-</div>
-<div>
     <canvas id="currentChart"></canvas>
 </div>
+<div>
+    <canvas id="emfChart"></canvas>
+</div>
+
 
 <script>
 // Настройки для графиков и инициализация контекстов
@@ -41,7 +42,7 @@ var options1 = {
         yAxes: [{
             scaleLabel: {
                 display: true,
-                labelString: 'ЭДС индукции, кВ'
+                labelString: 'ЭДС, кВ'
             }
         }]
     }
@@ -106,16 +107,6 @@ function simulateGenerator(magneticField, rotationFrequency, circuitResistance) 
 }
 
 // Объявляем пустые объекты данных для графиков
-var emfData = {
-    labels: [],
-    datasets: [{
-        label: 'ЭДС E(t)',
-        data: [],
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-    }]
-};
 
 var currentData = {
     labels: [],
@@ -123,16 +114,28 @@ var currentData = {
         label: 'Индукционный ток I(t)',
         data: [],
         fill: false,
-        borderColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(45, 99, 222)',
         tension: 0.1
     }]
 };
 
-var emfContext = document.getElementById('emfChart').getContext('2d');
-var emfChart = new Chart(emfContext, { type: 'line', data: emfData, options: options1 });
+var emfData = {
+    labels: [],
+    datasets: [{
+        label: 'ЭДС E(t)',
+        data: [],
+        fill: false,
+        borderColor: 'rgb(255, 0, 0)',
+        tension: 0.1
+    }]
+};
 
 var currentContext = document.getElementById('currentChart').getContext('2d');
 var currentChart = new Chart(currentContext, { type: 'line', data: currentData, options: options2 });
+
+var emfContext = document.getElementById('emfChart').getContext('2d');
+var emfChart = new Chart(emfContext, { type: 'line', data: emfData, options: options1 });
+
 
 </script>
 </body>
