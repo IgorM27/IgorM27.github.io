@@ -1,98 +1,121 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Фазовый портрет колебаний в LCR-контуре</title>
+    <title>Фазовый анализ LCR-контур</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        .content {
+            text-align: left;
+        }
+
+        .chart-container {
+            width: 70%;
+            height: 500px;
+            margin: 0 auto;
+        }
+
+        form {
+            max-width: 300px;
+            margin-left: 10px;
+        }
+
+        input,
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+            input[type="submit"] {
+                margin-top: 10px;
+            }
+    </style>
 </head>
 <body>
 
-<!-- Секция заголовка -->
-<h1 style="text-align:left;">Задание после лекции. Вариант №2. Моделирование.Фазовый портрет колебаний в LCR-контуре</h1>
-<h1 style="text-align:left;">Введите исходные данные:</h1>
-<!-- Форма для ввода параметров -->
-<div style="display:flex; justify-content:left;">
-    <form id="inputForm" style="text-align:left;">
-        <label for="inductance">Индуктивность (Гн):</label>
-        <input type="number" id="inductance" name="inductance" step="any"  required>
-        <label for="initialCharge">Начальный заряд (Кл):</label>
-        <input type="number" id="initialCharge" name="initialCharge" step="any"  required>
-        <label for="resistance">Сопротивление (Ом):</label>
-        <input type="number" id="resistance" name="resistance" step="any"  required>
-        <label for="capacitance">Емкость конденсатора (Ф):</label>
-        <input type="number" id="capacitance" name="capacitance" step="any"  required>
-        <input type="submit" value="Обновить график">
-    </form>
-</div>
+    <div class="content">
+        <h1>LCR-контур: фазовое поведение</h1>
+        <h2>Введите параметры цепи:</h2>
 
-<!-- Блок для отображения графика -->
-<div id="phasePortrait" style="width:1000px;height:1000px;margin:0; margin-left: 0px auto;"></div>
+        <form id="lcrForm">
+            <label for="l_value">Индуктивность L (Гн):</label>
+            <input type="number" id="l_value" step="any" required>
 
-<script>
-document.getElementById('inputForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+            <label for="q_value">Заряд Q (Кл):</label>
+            <input type="number" id="q_value" step="any" required>
 
-    var L = parseFloat(document.getElementById('inductance').value);
-    var R = parseFloat(document.getElementById('resistance').value);
-    var C = parseFloat(document.getElementById('capacitance').value);
-    var q0 = parseFloat(document.getElementById('initialCharge').value);
+            <label for="r_value">Сопротивление R (Ом):</label>
+            <input type="number" id="r_value" step="any" required>
 
-    drawPhasePortrait(L, R, C, q0);
-});
+            <label for="c_value">Ёмкость С (Ф):</label>
+            <input type="number" id="c_value" step="any" required>
 
-// Инициализируем пустую плоскость для графика
-Plotly.newPlot('phasePortrait', [{x: [], y: []}], {
-    xaxis: { title: 'Ток (А)' },
-    yaxis: { title: 'Напряжение (В)' }
-});
+            <input type="submit" value="Построить фазовый портрет">
+        </form>
 
+        <div id="chart" class="chart-container"></div> 
+    </div>
 
-function drawPhasePortrait(L, R, C, q0) {
-    var omega0 = Math.sqrt(1/(L*C));
-    var alpha = R/(2*L);
-    var i0 = 0; // Начальный ток
+    <script>
+        const plottingArea = 'chart';
 
-    var dt = 0.01; // Шаг по времени
-    var q = q0; // Текущий заряд
-    var i = i0; // Текущий ток
+        document.getElementById('lcrForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            initiateGraph();
+        });
 
-    var voltageData = [];
-    var currentData = [];
-    
-    // Цикл для расчёта значений тока и напряжения
-    for (var step = 0; step < 5000; step++) {
-        var dq = i * dt;
-        var di = (-R * i - q / C) / L * dt;
-        q += dq;
-        i += di;
-        
-        voltageData.push(q / C);
-        currentData.push(i);
-    }
+        function initiateGraph() {
+            const L = parseFloat(document.getElementById('l_value').value);
+            const R = parseFloat(document.getElementById('r_value').value);
+            const C = parseFloat(document.getElementById('c_value').value);
+            const Q = parseFloat(document.getElementById('q_value').value);
 
-    // Данные для построения фазового портрета
-    var data = [{
-        x: currentData,
-        y: voltageData,
-        mode: 'lines',
-        type: 'scatter',
-        name: 'Фазовый портрет',
-        line: {
-            color: 'red'
+            if (L < 0 | R < 0 | C < 0) {
+                alert('Рекомендуется работать с положительными числами');
+                return
+            }
+
+            renderPhasePortrait(L, R, C, Q);
         }
-    }];
 
-    // Настройки отображения графика
-    var layout = {
-        xaxis: { title: 'Ток (А)' },
-        yaxis: { title: 'Напряжение (В)' },
-        hovermode: 'closest'
-    };
+        function calculatePhasePoints(L, R, C, Q0) {
+            const omega = 1 / Math.sqrt(L * C);
+            const decayRate = R / (2 * L);
+            let q = Q0, i = 0, dt = 0.01;
+            let v = [], c = [];
 
-    // Создание графика с использованием Plotly
-    Plotly.newPlot('phasePortrait', data, layout);
-}
-</script>
+            for (let n = 0; n < 5000; n++) {
+                const deltaI = (-decayRate * i - q / C) * dt;
+                const deltaQ = i * dt;
+                i += deltaI;
+                q += deltaQ;
 
+                v.push(q / C);
+                c.push(i);
+            }
+
+            return { voltage: v, current: c };
+        }
+
+        function renderPhasePortrait(L, R, C, Q0) {
+            const points = calculatePhasePoints(L, R, C, Q0);
+            const trace = {
+                x: points.current,
+                y: points.voltage,
+                mode: 'lines',
+                type: 'scatter',
+                name: 'Фазовый портрет',
+                line: { color: 'blue' }
+            };
+            const layout = {
+                xaxis: { title: 'Ток (А)' },
+                yaxis: { title: 'Напряжение (В)' },
+                hovermode: 'closest'
+            };
+
+            Plotly.newPlot(plottingArea, [trace], layout);
+        }
+    </script>
 </body>
 </html>
