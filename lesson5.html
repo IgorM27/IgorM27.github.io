@@ -11,15 +11,15 @@
 
 <form id="parametersForm">
     <label for="initialCurrent">Силы тока (A):</label>
-    <input type="number" id="initialCurrent" step="0.01" required>
+    <input type="number" id="initialCurrent">
 
     <label for="inductance">Индуктивность (Гн):</label>
-    <input type="number" id="inductance" step="0.01" required>
+    <input type="number" id="inductance">
     
     <label for="resistance">Сопротивление (Ом):</label>
-    <input type="number" id="resistance" step="0.01" required>
+    <input type="number" id="resistance">
 
-    <button type="button" onclick="updateCharts()">Обновить графики</button>
+    <button type="button" onclick="update()">Обновить графики</button>
 </form>
 <div>
     <canvas id="closingChart"></canvas>
@@ -29,7 +29,7 @@
 </div>
 
 <script>
-// Параметры для графика и инициализация контекста канваса
+
 var options = {
     scales: {
         x: {
@@ -83,40 +83,51 @@ var openingChart = new Chart(openingContext, {
     options: options 
 });
 
-function simulateGenerator(initialCurrent, tau, mode) {
+    function simulateClosing(initialCurrent, inductance, resistance) {
     let timeArray = [];
     let currentValues = [];
-    let dt = 0.01; // Шаг времени
-    let timeMax = 10; // Максимальное значение времени для симуляции
+    let dt = 0.01; 
+    let timeMax = 15; 
 
-    for (let time = 0; time <= timeMax; time += dt) {
-        let current;
-        if(mode === 'closing') {
-            // Расчет тока для замыкания цепи
-            current = initialCurrent * (1 - Math.exp(-time / tau));
-        } else {
-            // Расчет тока для размыкания цепи
-            current = initialCurrent * Math.exp(-time / tau);
-        }
-        currentValues.push(current);
-        timeArray.push(time.toFixed(3));
+        for (let time = 0; time <= timeMax; time += dt) {
+            let value = initialCurrent * (1 - Math.exp(-time / (inductance / resistance)))
+            currentValues.push(value);
+            timeArray.push(time.toFixed(5));
     }
-
     return { timeArray, currentValues };
 }
 
-function updateCharts() {
+    function simulateOpen(initialCurrent, inductance, resistance) {
+        let timeArray = [];
+        let currentValues = [];
+        let dt = 0.01;
+        let timeMax = 15;
+
+        for (let time = 0; time <= timeMax; time += dt) {
+            let value = initialCurrent * Math.exp(-time / (inductance / resistance))
+            currentValues.push(value);
+            timeArray.push(time.toFixed(5));
+        }
+
+        return { timeArray, currentValues };
+    }
+
+function update() {
     var initialCurrent = parseFloat(document.getElementById('initialCurrent').value);
     var resistance = parseFloat(document.getElementById('resistance').value);
     var inductance = parseFloat(document.getElementById('inductance').value);
-    var tau = inductance / resistance; // Рассчитываем постоянную времени релаксации
 
-    var { timeArray, currentValues } = simulateGenerator(initialCurrent, tau, 'closing');
+    if (initialCurrent < 0 || resistance < 0 || inductance < 0) {
+        alert('Рекомендуется работать с положительными числами');
+        return;
+    }
+
+    var { timeArray, currentValues } = simulateClosing(initialCurrent, inductance, resistance);
 
     closingData.labels = timeArray;
     closingData.datasets[0].data = currentValues;
 
-    var { timeArray, currentValues } = simulateGenerator(initialCurrent, tau, 'opening');
+    var { timeArray, currentValues } = simulateOpen(initialCurrent, inductance, resistance);
 
     openingData.labels = timeArray;
     openingData.datasets[0].data = currentValues;
