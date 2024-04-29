@@ -103,7 +103,7 @@
                 const deltaPath = gapWidth * Math.sin(theta);
                 const intensity = Math.cos(Math.PI * deltaPath / lightWavelength) ** 2;
                 const brightness = Math.round(colorBase * intensity);
-                ctx.fillStyle = 'rgb(' + brightness + ',' + brightness + ',' + 0 + ')'; // Используем оттенки красного
+                ctx.fillStyle = 'rgb(' + brightness + ',' + brightness + ',' + 0 + ')';
                 ctx.fillRect(x, center - 10, 1, 20);
             }
         }
