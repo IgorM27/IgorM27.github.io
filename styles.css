@@ -55,18 +55,18 @@ nav a:hover {
 }
 .carousel {
   display: flex;
-  justify-content: space-around;  /* Центрирование и равномерное распределение изображений */
+  justify-content: space-around;
 }
 .carousel img {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
   transition: border-color 0.3s;
-  width: 30%;  /* Задаем ширину для изображений, чтобы они занимали место равномерно */
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);  /* Добавим небольшой тень для наглядности */
+  width: 30%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
 .carousel img:hover {
-  border-color: red;  /* Меняем цвет границы на красный при наведении */
+  border-color: red;
 }
 .video-reviews img {
   width: 100%;
@@ -83,7 +83,7 @@ nav a:hover {
   border-left: 4px solid #333;
 }
 .highlights h2 {
-  margin: 0 0 20px 20px;  /* Удаляем верхний отступ и добавляем нижний отступ */
+  margin: 0 0 20px 20px;
 }
 
 .container1 {
@@ -94,35 +94,35 @@ nav a:hover {
 }
 
 .container1 h2 {
-  margin: 0 0 20px 30px;  /* Удаляем верхний отступ и добавляем нижний отступ */
+  margin: 0 0 20px 30px;
 }
 
 .video-reviews {
   display: flex;
-  justify-content: space-around;  /* Центрирование и равномерное распределение видеообзоров */
+  justify-content: space-around;
 }
 .video {
-  width: 45%;  /* Задаем ширину каждого видеообзора */
+  width: 45%;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);  /* Добавим небольшой тень для наглядности */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
   background-color: #fff;
-  transition: border-color 0.3s, border-width 0.3s;  /* Плавный переход для изменения рамки */
+  transition: border-color 0.3s, border-width 0.3s;
 }
 .video:hover {
-  border-color: red;  /* Меняем цвет границы на красный при наведении */ /* Увеличиваем толщину границы при наведении */
+  border-color: red;
 }
 .video iframe {
   width: 100%;
-  height: 400px;  /* Устанавливаем высоту iframe под видео */
+  height: 400px;
   border-radius: 5px;
-  border: 1px solid #ccc;  /* Добавляем границу для iframe */
-  box-sizing: border-box;  /* Учитываем границу в общих размерах */
-  transition: border-color 0.3s;  /* Плавный переход для изменения цвета границы */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
 }
 .video iframe:hover {
-  border-color: red;  /* Меняем цвет границы на красный при наведении */
+  border-color: red;
 }
 
 .quote-and-formula {
@@ -140,14 +140,14 @@ nav a:hover {
 .quote-and-formula blockquote {
   font-style: italic;
   color: #555;
-  margin: 10px; /* Уменьшаем общий отступ */
-  padding: 10px 15px; /* Уменьшаем внутренние отступы */
+  margin: 10px;
+  padding: 10px 15px;
   border-left: 5px solid #ccc;
   background-color: #f0f0f0;
 }
 
 .quote-and-formula p {
-  margin: 15px 0; /* Уменьшаем вертикальные отступы между абзацами */
+  margin: 15px 0;
   font-size: 1.1em;
 }
 .results-section {
@@ -187,5 +187,40 @@ nav a:hover {
   transition: border-color 0.3s;
 }
 .results-section img:hover {
-  border-color: red; /* Красная граница при наведении */
+  border-color: red;
+}
+
+.next-race-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+.next-race-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.next-race-section .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  padding: 0;
+  margin: 0 275px 0 0;
+}
+.next-race-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: border-color 0.3s;
+}
+.next-race-section img:hover {
+  border-color: red;
 }
