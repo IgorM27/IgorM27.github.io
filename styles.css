@@ -1,0 +1,191 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.headline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+header, footer {
+  background-color: #f00;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+}
+header img {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 75px;
+}
+nav {
+  display: flex;
+  background-color: #333;
+  justify-content: space-between;
+  overflow: hidden;
+}
+nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  flex: 1;
+  text-decoration: none;
+}
+nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+.container {
+  padding: 20px;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+.highlights, .video-reviews {
+  margin-bottom: 20px;
+}
+.highlights {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+.carousel {
+  display: flex;
+  justify-content: space-around;  /* Центрирование и равномерное распределение изображений */
+}
+.carousel img {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color 0.3s;
+  width: 30%;  /* Задаем ширину для изображений, чтобы они занимали место равномерно */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);  /* Добавим небольшой тень для наглядности */
+}
+.carousel img:hover {
+  border-color: red;  /* Меняем цвет границы на красный при наведении */
+}
+.video-reviews img {
+  width: 100%;
+  height: auto;
+}
+.ascii-art {
+  font-family: monospace;
+  white-space: pre;
+  margin: 20px 0;
+}
+.code-snippet {
+  background: #f4f4f4;
+  padding: 10px;
+  border-left: 4px solid #333;
+}
+.highlights h2 {
+  margin: 0 0 20px 20px;  /* Удаляем верхний отступ и добавляем нижний отступ */
+}
+
+.container1 {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.container1 h2 {
+  margin: 0 0 20px 30px;  /* Удаляем верхний отступ и добавляем нижний отступ */
+}
+
+.video-reviews {
+  display: flex;
+  justify-content: space-around;  /* Центрирование и равномерное распределение видеообзоров */
+}
+.video {
+  width: 45%;  /* Задаем ширину каждого видеообзора */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);  /* Добавим небольшой тень для наглядности */
+  background-color: #fff;
+  transition: border-color 0.3s, border-width 0.3s;  /* Плавный переход для изменения рамки */
+}
+.video:hover {
+  border-color: red;  /* Меняем цвет границы на красный при наведении */ /* Увеличиваем толщину границы при наведении */
+}
+.video iframe {
+  width: 100%;
+  height: 400px;  /* Устанавливаем высоту iframe под видео */
+  border-radius: 5px;
+  border: 1px solid #ccc;  /* Добавляем границу для iframe */
+  box-sizing: border-box;  /* Учитываем границу в общих размерах */
+  transition: border-color 0.3s;  /* Плавный переход для изменения цвета границы */
+}
+.video iframe:hover {
+  border-color: red;  /* Меняем цвет границы на красный при наведении */
+}
+
+.quote-and-formula {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.quote-and-formula h2 {
+  margin-top: 0;
+}
+
+.quote-and-formula blockquote {
+  font-style: italic;
+  color: #555;
+  margin: 10px; /* Уменьшаем общий отступ */
+  padding: 10px 15px; /* Уменьшаем внутренние отступы */
+  border-left: 5px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.quote-and-formula p {
+  margin: 15px 0; /* Уменьшаем вертикальные отступы между абзацами */
+  font-size: 1.1em;
+}
+.results-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+.results-section .highlight-points {
+  flex: 1;
+  margin-right: 20px;
+}
+.results-section h2 {
+  margin-top: 0;
+}
+.results-section ol {
+  padding-left: 20px;
+}
+.results-section .image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  padding: 0;
+  margin: 0 800px 0 0;
+}
+.results-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  transition: border-color 0.3s;
+}
+.results-section img:hover {
+  border-color: red; /* Красная граница при наведении */
+}
