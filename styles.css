@@ -7,7 +7,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
-header, footer {
+footer {
   background-color: #f00;
   color: white;
   padding: 10px;
@@ -21,6 +21,7 @@ header img {
   width: 75px;
 }
 nav {
+  margin-top: 100px;
   display: flex;
   background-color: #333;
   justify-content: space-between;
@@ -39,24 +40,33 @@ nav a:hover {
   background-color: #ddd;
   color: black;
 }
+nav a.active {
+  background-color: #555;
+  color: white;
+}
+
 .container {
   padding: 20px;
   max-width: 2000px;
   margin: 0 auto;
 }
-.highlights, .video-reviews {
+.video-reviews {
   margin-bottom: 20px;
 }
+
 .highlights {
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
 }
+
 .carousel {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
+
 .carousel img {
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -65,23 +75,17 @@ nav a:hover {
   width: 30%;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
 }
+
 .carousel img:hover {
   border-color: red;
 }
-.video-reviews img {
-  width: 100%;
-  height: auto;
+
+@media (max-width: 768px) {
+  .carousel img {
+    width: 100%;
+  }
 }
-.ascii-art {
-  font-family: monospace;
-  white-space: pre;
-  margin: 20px 0;
-}
-.code-snippet {
-  background: #f4f4f4;
-  padding: 10px;
-  border-left: 4px solid #333;
-}
+
 .highlights h2 {
   margin: 0 0 20px 20px;
 }
@@ -100,7 +104,9 @@ nav a:hover {
 .video-reviews {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
+
 .video {
   width: 45%;
   border: 1px solid #ccc;
@@ -110,9 +116,11 @@ nav a:hover {
   background-color: #fff;
   transition: border-color 0.3s, border-width 0.3s;
 }
+
 .video:hover {
   border-color: red;
 }
+
 .video iframe {
   width: 100%;
   height: 400px;
@@ -121,8 +129,15 @@ nav a:hover {
   box-sizing: border-box;
   transition: border-color 0.3s;
 }
+
 .video iframe:hover {
   border-color: red;
+}
+
+@media (max-width: 768px) {
+  .video {
+    width: 100%;
+  }
 }
 
 .quote-and-formula {
@@ -150,77 +165,118 @@ nav a:hover {
   margin: 15px 0;
   font-size: 1.1em;
 }
-.results-section {
+
+
+.main-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   margin: 20px;
+  gap: 20px;
+}
+
+.results-section,
+.next-race-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 45%;
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
   border-radius: 5px;
+  position: relative;
 }
-.results-section .highlight-points {
-  flex: 1;
-  margin-right: 20px;
+
+.image-container {
+  margin-top: auto;
+  margin-bottom: 10px;
 }
-.results-section h2 {
-  margin-top: 0;
-}
-.results-section ol {
-  padding-left: 20px;
-}
-.results-section .image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30%;
-  padding: 0;
-  margin: 0 800px 0 0;
-}
-.results-section img {
+
+.image-container img {
   width: 100%;
   height: auto;
   border-radius: 5px;
   border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: border-color 0.3s;
 }
+
+.highlight-points,
+.content-block {
+  width: 100%;
+  text-align: left;
+}
+
+.next-race-section img:hover {
+  border-color: red;
+}
+
 .results-section img:hover {
   border-color: red;
 }
 
-.next-race-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.points-table {
   margin: 20px;
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f9f9f9;
   border-radius: 5px;
 }
-.next-race-section {
-  flex: 1;
-  margin-right: 20px;
+
+.points-table h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  text-align: center;
 }
 
-.next-race-section .image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 65%;
-  padding: 0;
-  margin: 0 275px 0 0;
-}
-.next-race-section img {
+.race-results-table {
   width: 100%;
-  height: auto;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-  transition: border-color 0.3s;
+  border-collapse: collapse;
 }
-.next-race-section img:hover {
-  border-color: red;
+
+.race-results-table th,
+.race-results-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.race-results-table thead {
+  background-color: #e0e0e0;
+}
+
+.race-results-table tbody tr:nth-child(even) {
+  background-color: #d3d3d3;
+}
+
+.race-results-table tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+.race-results-table tbody tr:hover {
+  border: 2px solid red;
+  border-collapse: separate;
+}
+.constructors-table {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.constructors-table h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+header {
+  background-color: #f00;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: absolute; /* Абсолютное позиционирование */
+  width: 100%;
+  top: 0;
+  left: 0;
 }

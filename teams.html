@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Сайт о Формуле 1, включающий освещения прошлых гонок, видео обзоры и новости">
+  <meta name="keywords" content="Формула 1, гонки, автоспорт, новости, видео обзоры">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Команды</title>
+  <script src="scripts/loadStats.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .team-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+    .team-item {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      transition: border 0.3s;
+      margin: 0 10px;
+    }
+    .team-item img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    .team-info {
+      text-align: left;
+      flex: 1;
+    }
+    .team-item:hover {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="formula_1_logo.png" alt="Флаг">
+  <h1 class="headline">Formula 1</h1>
+</header>
+
+<nav>
+  <a href="index.html">Главное</a>
+  <a href="news.html">Новости</a>
+  <a href="teams.html" class="active">Команды</a>
+  <a href="drivers.html">Гонщики</a>
+  <a href="schedule.html">Расписание</a>
+</nav>
+
+<div class="content">
+  <h2>Команды Формулы 1</h2>
+  <div class="team-list">
+    <div class="team-item">
+      <img src="teams/mc_laren.jpg" alt="McLaren Mercedes">
+      <div class="team-info">
+        <h3>McLaren Mercedes</h3>
+        <p>Страна: Великобритания</p>
+        <p>Двигатели: Mercedes</p>
+        <p>Гонщики: Ландо Норрис, Оскар Пиастри</p>
+        <p>Очки в Кубке конструкторов: 566</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/ferrari.jpg" alt="Ferrari">
+      <div class="team-info">
+        <h3>Ferrari</h3>
+        <p>Страна: Италия</p>
+        <p>Двигатели: Ferrari</p>
+        <p>Гонщики: Шарль Леклер, Карлос Сайнс-мл.</p>
+        <p>Очки в Кубке конструкторов: 537</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/red_bull.jpg" alt="Red Bull Honda-RBPT">
+      <div class="team-info">
+        <h3>Red Bull Honda-RBPT</h3>
+        <p>Страна: Австрия</p>
+        <p>Двигатели: Honda RBPT</p>
+        <p>Гонщики: Макс Ферстаппен, Серхио Перес</p>
+        <p>Очки в Кубке конструкторов: 512</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/mercedes.jpg" alt="Mercedes">
+      <div class="team-info">
+        <h3>Mercedes</h3>
+        <p>Страна: Германия</p>
+        <p>Двигатели: Mercedes</p>
+        <p>Гонщики: Льюис Хэмилтон, Джордж Расселл</p>
+        <p>Очки в Кубке конструкторов: 366</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/aston_martin.jpg" alt="Aston Martin Mercedes">
+      <div class="team-info">
+        <h3>Aston Martin Mercedes</h3>
+        <p>Страна: Великобритания</p>
+        <p>Двигатели: Mercedes</p>
+        <p>Гонщики: Фернандо Алонсо, Лэнс Стролл</p>
+        <p>Очки в Кубке конструкторов: 86</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/haas.jpg" alt="Haas Ferrari">
+      <div class="team-info">
+        <h3>Haas Ferrari</h3>
+        <p>Страна: США</p>
+        <p>Двигатели: Ferrari</p>
+        <p>Гонщики: Кевин Магнуссен, Нико Хюлькенберг</p>
+        <p>Очки в Кубке конструкторов: 46</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/red_bull_racing.jpg" alt="Racing Bulls Honda-RBPT">
+      <div class="team-info">
+        <h3>Racing Bulls Honda-RBPT</h3>
+        <p>Страна: Япония</p>
+        <p>Двигатели: Honda RBPT</p>
+        <p>Гонщики: Юки Цунода, Даниэль Риккардо</p>
+        <p>Очки в Кубке конструкторов: 36</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/williams.jpg" alt="Williams Mercedes">
+      <div class="team-info">
+        <h3>Williams Mercedes</h3>
+        <p>Страна: Великобритания</p>
+        <p>Двигатели: Mercedes</p>
+        <p>Гонщики: Александер Албон, Логан Сарджент</p>
+        <p>Очки в Кубке конструкторов: 17</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/alpine.jpg" alt="Alpine Renault">
+      <div class="team-info">
+        <h3>Alpine Renault</h3>
+        <p>Страна: Франция</p>
+        <p>Двигатели: Renault</p>
+        <p>Гонщики: Эстебан Окон, Пьер Гасли</p>
+        <p>Очки в Кубке конструкторов: 14</p>
+      </div>
+    </div>
+    <div class="team-item">
+      <img src="teams/kick_sauber.jpg" alt="Sauber Kick-Sauber Ferrari">
+      <div class="team-info">
+        <h3>Sauber Kick-Sauber Ferrari</h3>
+        <p>Страна: Швейцария</p>
+        <p>Двигатели: Ferrari</p>
+        <p>Гонщики: Чжоу Гуаньюй, Валттери Боттас</p>
+        <p>Очки в Кубке конструкторов: 0</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Формула 1. Все права не защищены.</p>
+</footer>
+
+</body>
+</html>

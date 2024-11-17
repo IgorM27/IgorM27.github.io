@@ -6,6 +6,7 @@
   <meta name="keywords" content="Формула 1, гонки, автоспорт, новости, видео обзоры">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Формула 1</title>
+  <script src="scripts/loadStats.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -23,11 +24,11 @@
 </header>
 
 <nav>
-  <a href="#">Главное</a>
-  <a href="#">Новости</a>
-  <a href="#">Команды</a>
-  <a href="#">Гонщики</a>
-  <a href="#">Расписание</a>
+  <a href="index.html">Главное</a>
+  <a href="news.html">Новости</a>
+  <a href="teams.html">Команды</a>
+  <a href="drivers.html">Гонщики</a>
+  <a href="schedule.html">Расписание</a>
 </nav>
 
 <main class="container">
@@ -61,67 +62,111 @@
     </aside>
   </section>
 
-  <section class="results-section">
-    <div class="highlight-points">
-      <h2>Результаты прошлой гонки Формула-1. <br>Гран-при Италии (топ-10):</h2>
-      <ol>
-        <li>Шарль Леклер («Феррари») — 53 круга</li>
-        <li>Оскар Пиастри («Макларен») +2.664</li>
-        <li>Ландо Норрис («Макларен») +6.153</li>
-        <li>Карлос Сайнс («Феррари») +15.621</li>
-        <li>Льюис Хэмилтон («Мерседес») +22.820</li>
-        <li>Макс Ферстаппен («Ред Булл») +37.932</li>
-        <li>Джордж Расселл («Мерседес») +39.715</li>
-        <li>Серхио Перес («Ред Булл») +54.148</li>
-        <li>Александер Албон («Уильямс») +1:07.456</li>
-        <li>Кевин Магнуссен («Хаас») +1:08.302</li>
-      </ol>
-    </div>
-    <div class="image-container">
-      <img src="monza.png" alt="Гоночная карта">
-    </div>
-  </section>
+  <div class="main-container">
+    <section class="results-section">
+      <div class="highlight-points">
+        <h2>Результаты прошлой гонки Формула-1. <br>Гран-при Италии (топ-10):</h2>
+        <ol>
+          <li>Шарль Леклер («Феррари») — 53 круга</li>
+          <li>Оскар Пиастри («Макларен») +2.664</li>
+          <li>Ландо Норрис («Макларен») +6.153</li>
+          <li>Карлос Сайнс («Феррари») +15.621</li>
+          <li>Льюис Хэмилтон («Мерседес») +22.820</li>
+          <li>Макс Ферстаппен («Ред Булл») +37.932</li>
+          <li>Джордж Расселл («Мерседес») +39.715</li>
+          <li>Серхио Перес («Ред Булл») +54.148</li>
+          <li>Александер Албон («Уильямс») +1:07.456</li>
+          <li>Кевин Магнуссен («Хаас») +1:08.302</li>
+        </ol>
+      </div>
+      <div class="image-container">
+        <img src="monza.png" alt="Гоночная карта">
+      </div>
+    </section>
 
-  <section class="next-race-section">
-    <article class="content-block">
-      <h2>Следующая гонка: Гран-при Сингапура 2024</h2>
-      <p><strong>Дата:</strong> 22 сентября 2024</p>
-      <p><strong>Место:</strong> Городская трасса Сингапура</p>
-      <p><strong>Прогноз погоды:</strong> Ожидается жаркая и влажная погода, с температурой около 30°C и возможностью дождя.</p>
-      <p><strong>Особенности трассы:</strong> Гран-при Сингапура известен как ночная гонка с большим количеством поворотов и узкими участками. Это одна из самых сложных трасс в календаре Формулы 1, требующая высокой концентрации от гонщиков.</p>
-      <p><strong>Прогнозируемые фавориты на победу:</strong> Оскар Пиастри из команды McLaren имеет хорошие шансы на победу, учитывая его текущую форму и успехи в предыдущих гонках. Также Шарль Леклер из Ferrari и Ландно Норрис из McLaren могут составить конкуренцию.</p>
-    </article>
-    <div class="image-container">
-      <img src="singapore.png" alt="Гоночная карта">
-    </div>
-  </section>
+    <section class="next-race-section">
+      <article class="content-block">
+        <h2>Следующая гонка: Гран-при Сингапура 2024</h2>
+        <p><strong>Дата:</strong> 22 сентября 2024</p>
+        <p><strong>Место:</strong> Городская трасса Сингапура</p>
+        <p><strong>Прогноз погоды:</strong> Ожидается жаркая и влажная погода, с температурой около 30°C и возможностью дождя.</p>
+        <p><strong>Особенности трассы:</strong> Гран-при Сингапура известен как ночная гонка с большим количеством поворотов и узкими участками. Это одна из самых сложных трасс в календаре Формулы 1, требующая высокой концентрации от гонщиков.</p>
+        <p><strong>Прогнозируемые фавориты на победу:</strong> Оскар Пиастри из команды McLaren имеет хорошие шансы на победу, учитывая его текущую форму и успехи в предыдущих гонках. Также Шарль Леклер из Ferrari и Ландно Норрис из McLaren могут составить сильную конкуренцию.</p>
+      </article>
+      <div class="image-container">
+        <img src="singapore.png" alt="Гоночная карта">
+      </div>
+    </section>
+  </div>
 
-  <section class="ascii-art">
-    <h2>ASCII art (удалю после первой лабы)</h2>
-    <pre>
-        _    _             /'_'_/.-''/                             _______
-        \`../ |o_..__     / /__   / /  -= WORLD CHAMPIONSHIP =-   _\=.o.=/_
-      `.,(_)______(_).>  / ___/  / /                             |_|_____|_|
-      ~~~~~~~~~~~~~~~~~~/_/~~~~~/_/~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  <div class="points-table">
+    <h2>Турнирная таблица: Личный зачет</h2>
+    <table class="race-results-table">
+      <thead>
+      <tr>
+        <th>№</th>
+        <th>Спортсмен</th>
+        <th>Команда</th>
+        <th>Очки</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><td>1</td><td>Макс Ферстаппен</td><td>Red Bull Honda-RBPT</td><td>362</td></tr>
+      <tr><td>2</td><td>Ландо Норрис</td><td>McLaren Mercedes</td><td>315</td></tr>
+      <tr><td>3</td><td>Шарль Леклер</td><td>Ferrari</td><td>291</td></tr>
+      <tr><td>4</td><td>Оскар Пиастри</td><td>McLaren Mercedes</td><td>251</td></tr>
+      <tr><td>5</td><td>Карлос Сайнс-мл.</td><td>Ferrari</td><td>240</td></tr>
+      <tr><td>6</td><td>Льюис Хэмилтон</td><td>Mercedes</td><td>189</td></tr>
+      <tr><td>7</td><td>Джордж Расселл</td><td>Mercedes</td><td>177</td></tr>
+      <tr><td>8</td><td>Серхио Перес</td><td>Red Bull Honda-RBPT</td><td>150</td></tr>
+      <tr><td>9</td><td>Фернандо Алонсо</td><td>Aston Martin Mercedes</td><td>62</td></tr>
+      <tr><td>10</td><td>Нико Хюлькенберг</td><td>Haas Ferrari</td><td>31</td></tr>
+      <tr><td>11</td><td>Лэнс Стролл</td><td>Aston Martin Mercedes</td><td>24</td></tr>
+      <tr><td>12</td><td>Юки Цунода</td><td>Racing Bulls Honda-RBPT</td><td>22</td></tr>
+      <tr><td>13</td><td>Кевин Магнуссен</td><td>Haas Ferrari</td><td>14</td></tr>
+      <tr><td>14</td><td>Даниэль Риккардо</td><td>Racing Bulls Honda-RBPT</td><td>12</td></tr>
+      <tr><td>15</td><td>Александер Албон</td><td>Williams Mercedes</td><td>12</td></tr>
+      <tr><td>16</td><td>Пьер Гасли</td><td>Alpine Renault</td><td>9</td></tr>
+      <tr><td>17</td><td>Оливер Берман</td><td>Haas Ferrari</td><td>7</td></tr>
+      <tr><td>18</td><td>Эстебан Окон</td><td>Alpine Renault</td><td>5</td></tr>
+      <tr><td>19</td><td>Франко Колапинто</td><td>Williams Mercedes</td><td>5</td></tr>
+      <tr><td>20</td><td>Лиам Лоусон</td><td>Racing Bulls Honda-RBPT</td><td>2</td></tr>
+      <tr><td>21</td><td>Чжоу Гуаньюй</td><td>Sauber Kick-Sauber</td><td>0</td></tr>
+      <tr><td>22</td><td>Валттери Боттас</td><td>Sauber Kick-Sauber</td><td>0</td></tr>
+      <tr><td>23</td><td>Логан Сарджент</td><td>Williams Mercedes</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-</pre>
-  </section>
+  <div class="constructors-table">
+    <h2>Кубок конструкторов: Турнирная таблица</h2>
+    <table class="race-results-table">
+      <thead>
+      <tr>
+        <th>№</th>
+        <th>Команда</th>
+        <th>Победы</th>
+        <th>Поул-позиции</th>
+        <th>Лучшие круги</th>
+        <th>Очки</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr><td>1</td><td>McLaren Mercedes</td><td>5</td><td>6</td><td>5</td><td>566</td></tr>
+      <tr><td>2</td><td>Ferrari</td><td>5</td><td>4</td><td>4</td><td>537</td></tr>
+      <tr><td>3</td><td>Red Bull Honda-RBPT</td><td>7</td><td>8</td><td>3</td><td>512</td></tr>
+      <tr><td>4</td><td>Mercedes</td><td>3</td><td>2</td><td>4</td><td>366</td></tr>
+      <tr><td>5</td><td>Aston Martin Mercedes</td><td>0</td><td>2</td><td>0</td><td>86</td></tr>
+      <tr><td>6</td><td>Haas Ferrari</td><td>0</td><td>0</td><td>0</td><td>46</td></tr>
+      <tr><td>7</td><td>Racing Bulls Honda-RBPT</td><td>0</td><td>0</td><td>1</td><td>36</td></tr>
+      <tr><td>8</td><td>Williams Mercedes</td><td>0</td><td>0</td><td>0</td><td>17</td></tr>
+      <tr><td>9</td><td>Alpine Renault</td><td>0</td><td>0</td><td>1</td><td>14</td></tr>
+      <tr><td>10</td><td>Sauber Kick-Sauber Ferrari</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <section class="code-snippet">
-    <h2>Пример кода (удалю после первой лабораторной)</h2>
-    <pre>
-      <code>
-      &lt;html&gt;
-        &lt;head&gt;
-          &lt;title&gt;Пример кода (удалю после первой лабораторной)&lt;/title&gt;
-        &lt;/head&gt;
-        &lt;body&gt;
-          &lt;h1&gt;Пример кода(удалю после первой лабораторной)&lt;/h1&gt;
-        &lt;/body&gt;
-      &lt;/html&gt;
-      </code>
-        </pre>
-  </section>
+
 </main>
 
 <footer>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Сайт о Формуле 1, включающий освещения прошлых гонок, видео обзоры и новости">
+  <meta name="keywords" content="Формула 1, гонки, автоспорт, новости, видео обзоры">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Гонщики</title>
+  <script src="scripts/loadStats.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+    .driver-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 10px;
+    }
+    .driver-item {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background-color: #f9f9f9;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      transition: border 0.3s;
+      margin: 0 10px;
+    }
+    .driver-item img {
+      height: 200px;
+      width: 200px;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    .driver-info {
+      text-align: left;
+      flex: 1;
+    }
+    .driver-item:hover {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="formula_1_logo.png" alt="Флаг">
+  <h1 class="headline">Formula 1</h1>
+</header>
+
+<nav>
+  <a href="index.html">Главное</a>
+  <a href="news.html">Новости</a>
+  <a href="teams.html">Команды</a>
+  <a href="drivers.html">Гонщики</a>
+  <a href="schedule.html">Расписание</a>
+</nav>
+
+<div class="content">
+  <h2>Гонщики Формулы 1</h2>
+  <div class="driver-list">
+    <div class="driver-item">
+      <img src="drivers/verstappen.jpg" alt="Макс Ферстаппен">
+      <div class="driver-info">
+        <h3>Макс Ферстаппен</h3>
+        <p>Национальность: Нидерланды</p>
+        <p>Команда: Red Bull Honda-RBPT</p>
+        <p>Очки: 362</p>
+        <p>Возраст: 26 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/norris.jpg" alt="Ландо Норрис">
+      <div class="driver-info">
+        <h3>Ландо Норрис</h3>
+        <p>Национальность: Великобритания</p>
+        <p>Команда: McLaren Mercedes</p>
+        <p>Очки: 315</p>
+        <p>Возраст: 23 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/leclerc.jpg" alt="Шарль Леклер">
+      <div class="driver-info">
+        <h3>Шарль Леклер</h3>
+        <p>Национальность: Монако</p>
+        <p>Команда: Ferrari</p>
+        <p>Очки: 291</p>
+        <p>Возраст: 25 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/piastri.jpg" alt="Оскар Пиастри">
+      <div class="driver-info">
+        <h3>Оскар Пиастри</h3>
+        <p>Национальность: Австралия</p>
+        <p>Команда: McLaren Mercedes</p>
+        <p>Очки: 251</p>
+        <p>Возраст: 22 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/sainz.jpg" alt="Карлос Сайнс-мл.">
+      <div class="driver-info">
+        <h3>Карлос Сайнс</h3>
+        <p>Национальность: Испания</p>
+        <p>Команда: Ferrari</p>
+        <p>Очки: 240</p>
+        <p>Возраст: 28 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/hamilton.jpg" alt="Льюис Хэмилтон">
+      <div class="driver-info">
+        <h3>Льюис Хэмилтон</h3>
+        <p>Национальность: Великобритания</p>
+        <p>Команда: Mercedes</p>
+        <p>Очки: 189</p>
+        <p>Возраст: 38 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/russel.jpg" alt="Джордж Расселл">
+      <div class="driver-info">
+        <h3>Джордж Расселл</h3>
+        <p>Национальность: Великобритания</p>
+        <p>Команда: Mercedes</p>
+        <p>Очки: 177</p>
+        <p>Возраст: 25 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/perez.jpg" alt="Серхио Перес">
+      <div class="driver-info">
+        <h3>Серхио Перес</h3>
+        <p>Национальность: Мексика</p>
+        <p>Команда: Red Bull Honda-RBPT</p>
+        <p>Очки: 150</p>
+        <p>Возраст: 33 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/alonso.jpg" alt="Фернандо Алонсо">
+      <div class="driver-info">
+        <h3>Фернандо Алонсо</h3>
+        <p>Национальность: Испания</p>
+        <p>Команда: Aston Martin Mercedes</p>
+        <p>Очки: 62</p>
+        <p>Возраст: 42 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/hulkenberg.jpg" alt="Нико Хюлькенберг">
+      <div class="driver-info">
+        <h3>Нико Хюлькенберг</h3>
+        <p>Национальность: Германия</p>
+        <p>Команда: Haas Ferrari</p>
+        <p>Очки: 31</p>
+        <p>Возраст: 36 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/stroll.jpg" alt="Лэнс Стролл">
+      <div class="driver-info">
+        <h3>Лэнс Стролл</h3>
+        <p>Национальность: Канада</p>
+        <p>Команда: Aston Martin Mercedes</p>
+        <p>Очки: 24</p>
+        <p>Возраст: 24 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/tsunoda.jpg" alt="Юки Цунода">
+      <div class="driver-info">
+        <h3>Юки Цунода</h3>
+        <p>Национальность: Япония</p>
+        <p>Команда: Racing Bulls Honda-RBPT</p>
+        <p>Очки: 22</p>
+        <p>Возраст: 23 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/magnussen.jpg" alt="Кевин Магнуссен">
+      <div class="driver-info">
+        <h3>Кевин Магнуссен</h3>
+        <p>Национальность: Дания</p>
+        <p>Команда: Haas Ferrari</p>
+        <p>Очки: 14</p>
+        <p>Возраст: 31 год</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/ricciardo.jpg" alt="Даниэль Риккардо">
+      <div class="driver-info">
+        <h3>Даниэль Риккардо</h3>
+        <p>Национальность: Австралия</p>
+        <p>Команда: Racing Bulls Honda-RBPT</p>
+        <p>Очки: 12</p>
+        <p>Возраст: 34 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/albon.jpg" alt="Александер Албон">
+      <div class="driver-info">
+        <h3>Александер Албон</h3>
+        <p>Национальность: Таиланд</p>
+        <p>Команда: Williams Mercedes</p>
+        <p>Очки: 12</p>
+        <p>Возраст: 27 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/gasly.jpg" alt="Пьер Гасли">
+      <div class="driver-info">
+        <h3>Пьер Гасли</h3>
+        <p>Национальность: Франция</p>
+        <p>Команда: Alpine Renault</p>
+        <p>Очки: 9</p>
+        <p>Возраст: 27 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/behrman.jpg" alt="Оливер Берман">
+      <div class="driver-info">
+        <h3>Оливер Берман</h3>
+        <p>Национальность: Великобритания</p>
+        <p>Команда: Haas Ferrari</p>
+        <p>Очки: 7</p>
+        <p>Возраст: 21 год</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/ocon.jpg" alt="Эстебан Окон">
+      <div class="driver-info">
+        <h3>Эстебан Окон</h3>
+        <p>Национальность: Франция</p>
+        <p>Команда: Alpine Renault</p>
+        <p>Очки: 5</p>
+        <p>Возраст: 27 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/colapinto.jpg" alt="Франко Колапинто">
+      <div class="driver-info">
+        <h3>Франко Колапинто</h3>
+        <p>Национальность: Аргентина</p>
+        <p>Команда: Williams Mercedes</p>
+        <p>Очки: 5</p>
+        <p>Возраст: 20 лет</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/lawson.jpg" alt="Лиам Лоусон">
+      <div class="driver-info">
+        <h3>Лиам Лоусон</h3>
+        <p>Национальность: Новая Зеландия</p>
+        <p>Команда: Racing Bulls Honda-RBPT</p>
+        <p>Очки: 2</p>
+        <p>Возраст: 21 год</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/zhou.jpg" alt="Чжоу Гуаньюй">
+      <div class="driver-info">
+        <h3>Чжоу Гуаньюй</h3>
+        <p>Национальность: Китай</p>
+        <p>Команда: Sauber Kick-Sauber</p>
+        <p>Очки: 0</p>
+        <p>Возраст: 24 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/bottas.jpg" alt="Валттери Боттас">
+      <div class="driver-info">
+        <h3>Валттери Боттас</h3>
+        <p>Национальность: Финляндия</p>
+        <p>Команда: Sauber Kick-Sauber</p>
+        <p>Очки: 0</p>
+        <p>Возраст: 34 года</p>
+      </div>
+    </div>
+    <div class="driver-item">
+      <img src="drivers/sargeant.jpg" alt="Логан Сарджент">
+      <div class="driver-info">
+        <h3>Логан Сарджент</h3>
+        <p>Национальность: США</p>
+        <p>Команда: Williams Mercedes</p>
+        <p>Очки: 0</p>
+        <p>Возраст: 22 года</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2024 Формула 1. Все права не защищены (надеемся Red Bull сделают нормальную машину).</p>
+</footer>
+
+</body>
+</html>
