@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Сайт о Формуле 1, включающий освещения прошлых гонок, видео обзоры и новости">
+  <meta name="keywords" content="Формула 1, гонки, автоспорт, новости, видео обзоры">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Команды</title>
+  <script src="scripts/loadStats.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <img src="formula_1_logo.png" alt="Флаг">
+  <h1 class="headline">Formula 1</h1>
+</header>
+
+<nav>
+  <a href="index.html">Главное</a>
+  <a href="news.html">Новости</a>
+  <a href="teams.html">Команды</a>
+  <a href="drivers.html">Гонщики</a>
+  <a href="schedule.html">Расписание</a>
+  <a href="race-schedule-generator.html">Конструктор расписания</a>
+</nav>
+
+<main>
+  <h2>Персональное расписание гонок</h2>
+  <form id="customScheduleForm">
+    <div class="form-group">
+      <label>Выберите страны:</label>
+      <label><input type="checkbox" name="country" value="bahrain"> Бахрейн</label>
+      <label><input type="checkbox" name="country" value="saudi-arabia"> Саудовская Аравия</label>
+      <label><input type="checkbox" name="country" value="australia"> Австралия</label>
+      <label><input type="checkbox" name="country" value="japan"> Япония</label>
+      <label><input type="checkbox" name="country" value="usa"> США(Майами)</label>
+      <label><input type="checkbox" name="country" value="italy"> Италия(Импола)</label>
+      <label><input type="checkbox" name="country" value="china"> Китай</label>
+      <label><input type="checkbox" name="country" value="monaco"> Монако</label>
+      <label><input type="checkbox" name="country" value="canada"> Канада</label>
+      <label><input type="checkbox" name="country" value="spain"> Испания</label>
+      <label><input type="checkbox" name="country" value="austria"> Австрия</label>
+      <label><input type="checkbox" name="country" value="uk"> Великобритания</label>
+      <label><input type="checkbox" name="country" value="hungary"> Венгрия</label>
+      <label><input type="checkbox" name="country" value="belgium"> Бельгия</label>
+      <label><input type="checkbox" name="country" value="netherlands"> Нидерланды</label>
+      <label><input type="checkbox" name="country" value="italy-monza"> Италия(Монца)</label>
+      <label><input type="checkbox" name="country" value="azerbaijan"> Азербайджан</label>
+      <label><input type="checkbox" name="country" value="singapore"> Сингапур</label>
+      <label><input type="checkbox" name="country" value="usa-austin"> США(Остин)</label>
+      <label><input type="checkbox" name="country" value="mexico"> Мексика</label>
+      <label><input type="checkbox" name="country" value="brazil"> Бразилия</label>
+      <label><input type="checkbox" name="country" value="usa-las-vegas"> США(Лас Вегас)</label>
+      <label><input type="checkbox" name="country" value="qatar"> Катар</label>
+      <label><input type="checkbox" name="country" value="uae"> ОАЭ</label>
+    </div>
+
+    <div class="form-group">
+      <label>Тип заездов:</label>
+      <label><input type="checkbox" name="sessionType" value="practice" checked> Практика</label>
+      <label><input type="checkbox" name="sessionType" value="qualifying" checked> Квалификация</label>
+      <label><input type="checkbox" name="sessionType" value="sprint-qualifying" checked> Квалификация к спринту</label>
+      <label><input type="checkbox" name="sessionType" value="sprint" checked> Спринт</label>
+      <label><input type="checkbox" name="sessionType" value="race" checked> Гонка</label>
+    </div>
+
+    <div class="form-group">
+      <label>Удобное время:</label>
+      <div class="time-selector">
+        <div class="time-wrapper">
+          <span class="current-time" id="startTimeLabel">00:00</span>
+          <input type="range" id="timeStart" name="timeStart" min="0" max="1440" value="0">
+        </div>
+        <div class="time-wrapper">
+          <span class="current-time" id="endTimeLabel">23:59</span>
+          <input type="range" id="timeEnd" name="timeEnd" min="0" max="1440" value="1440">
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Создать расписание</button>
+  </form>
+
+  <div id="scheduleContainer"></div>
+</main>
+
+<script src="scripts/race-shedule-generator.js"></script>
+
+<footer>
+  <p>&copy; 2024 Формула 1. Все права не защищены.</p>
+</footer>
+
+</body>
+</html>
