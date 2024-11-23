@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Новости</title>
   <script src="scripts/loadStats.js"></script>
+  <script src="scripts/loadNews.js" defer></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
   <link rel="stylesheet" href="styles.css">
   <style>
@@ -51,6 +52,22 @@
       margin: 15px 0 0;
       color: #555;
       line-height: 1.5;
+    }
+
+    .spinner {
+      margin: 20px auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top-color: #3498db;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
     }
   </style>
 </head>
@@ -101,6 +118,12 @@
       <p>Ferrari испытывает трудности с выбором пилота для тестов в Абу-Даби. Оливер Берман не подходит из-за участия в более чем 3 Гран-При. Вероятно, итальянская команда предпочтёт Антонио Фуоко, недавно выигравшего в "24 часа Ле-Мана".</p>
     </div>
   </div>
+
+  <div id="preloader" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="dynamic-news"></div>
 
 </div>
 
