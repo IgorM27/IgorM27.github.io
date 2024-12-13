@@ -352,3 +352,37 @@ label {
 .time-selector {
   width: 100%;
 }
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: red;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  max-width: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: auto;
+}
+

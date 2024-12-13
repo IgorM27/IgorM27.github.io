@@ -9,6 +9,8 @@
   <script src="scripts/loadStats.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -35,10 +37,12 @@
 <main class="container">
   <section class="highlights">
     <h2>Highlights с прошлой гонки</h2>
-    <div class="carousel">
-      <img src="highlight1.jpg" alt="Highlight 1">
-      <img src="highlight2.jpg" alt="Highlight 2">
-      <img src="highlight3.jpg" alt="Highlight 3">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="highlight1.jpg" alt="Highlight 1"></div>
+        <div class="swiper-slide"><img src="highlight2.jpg" alt="Highlight 2"></div>
+        <div class="swiper-slide"><img src="highlight3.jpg" alt="Highlight 3"></div>
+      </div>
     </div>
   </section>
   <div class="container1">
@@ -173,6 +177,19 @@
 <footer>
   <p>&copy; 2024 Формула 1. Все права не защищены (надеемся Red Bull сделают нормальную машину).</p>
 </footer>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var swiper = new Swiper('.swiper-container', {
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      spaceBetween: 100,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      }
+    });
+  });
+</script>
 </body>
 </html>
